@@ -139,13 +139,10 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let newArr = [];
   let houses = [];
+  // Solution code here...
   arr.forEach((item) => {
-    newArr.push(Object.values(item));
-  });
-  newArr.forEach((item) => {
-    houses.push(item[item.length - 1]);
+    houses.push(item.house);
   });
   return houses;
 };
