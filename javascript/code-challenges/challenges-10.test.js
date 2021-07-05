@@ -52,13 +52,15 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
+
 const totalSum = (matrix) => {
-  // Solution code here...
   let sum=0;
-  matrix.forEach((element)=>{
-    element.forEach((item)=>{
-      sum =sum + item;
+  matrix.forEach(item=>{
+
+    item.forEach(value=>{
+      sum=sum+value;
     });
+
   });
   return sum;
 };
