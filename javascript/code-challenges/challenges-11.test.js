@@ -19,12 +19,8 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  let arr = Object.entries(obj);
-  let newArr = [];
-  arr.forEach((item) => {
-    newArr.push(`<li>${item[0]}: ${item[1]}</li>`);
-  });
-  return newArr;
+  obj.entrite();
+  return;
 }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -37,15 +33,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let counter = 0;
-  input.map((item) => {
-    item.map((value) => {
+  let count = 0;
+  input.map((arr) => {
+    arr.map((value) => {
       if (value === target) {
-        counter++;
+        count = count + 1;
       }
     });
   });
-  return counter;
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,16 +55,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  let sum = input.reduce((acc, val) => {
-    let sum2 = val.reduce((acc2, val2) => {
-      acc2 = val2 + acc2;
-      return acc2;
+  return input.reduce((acc1, value) => {
+    let x = value.reduce((acc2, val) => {
+      return (acc2 = val + acc2);
     }, 0);
-    acc = acc + sum2;
-
-    return acc;
+    return (acc1 = acc1 + x);
   }, 0);
-  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -191,11 +183,10 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  return data.reduce((res,item)=>{
-    return res = Number(item.height) < Number(res.height) ? item : res;
+  return data.reduce((res, item) => {
+    return (res = Number(item.height) < Number(res.height) ? item : res);
   }).name;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
