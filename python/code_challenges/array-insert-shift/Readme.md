@@ -1,4 +1,4 @@
-# Reverse an Array
+# insert Shift Array
 ### Write a function called insertShiftArray which takes an array and a variable as inputs. Without utilizing any of the built-in methods available to your language, return an array with the element inserted at the array's center
 
 ![insertShiftArray](./insertShiftArray.jpg)
