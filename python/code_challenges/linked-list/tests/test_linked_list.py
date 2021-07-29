@@ -18,12 +18,10 @@ def test_node_has_next_attribute():
   node = Node("Anas")
   actual = node.next
   assert True
-# test creating a linked list
 
 def test_linkedlist():
    assert LinkedList()
 
-# test inserting values into linked list
 
 def test_insert():
   # arrange
@@ -33,7 +31,6 @@ def test_insert():
   ll.insert(51)
   actual = ll.head.value
   assert actual == 51
-# test finding a value in linked list; found and not found
 
 def test_fined_value_in_linked_list():
     new_linked= LinkedList()
@@ -47,4 +44,3 @@ def test_fined_value_in_linked_list():
         new_linked.head.value
     new_linked.insert(52)
     assert new_linked.includes(31)==False
-# test removing value from linked list

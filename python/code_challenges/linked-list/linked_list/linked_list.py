@@ -1,5 +1,8 @@
 
 class Node:
+  ''''
+  THis the class is responsiple to create the Nodes 
+  '''
   def __init__(self, value=""):
     self.value = value
     self.next = None
@@ -12,12 +15,15 @@ class Node:
     return str(self.value)
 
 class LinkedList():
-
+  '''
+  This Class Responsable For Creating LinkdeList 
+  '''
   def __init__(self):
     self.head = None
 
   def insert(self, value):
     node = Node(value)
+    print(node)
     if self.head:
       node.next = self.head
     self.head = node
@@ -36,6 +42,7 @@ class LinkedList():
     current = self.head
     while current:
       string += f"{str(current.value)} -> "
+      print(current.next)
       current = current.next
     string += "None"
     return string
@@ -57,7 +64,8 @@ class LinkedList():
 
 if __name__ == "__main__":
   ll = LinkedList()
+  test_node=Node(5)
   ll.insert(167)
   ll.insert(54)
-  ll.insert(44)
-  ll.insert(71)
+  print(test_node)
+#   ll.insert(71)
