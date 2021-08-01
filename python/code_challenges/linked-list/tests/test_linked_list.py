@@ -1,6 +1,7 @@
 import pytest
 from linked_list import __version__
 from linked_list.linked_list import LinkedList, Node
+
 def test_version():
     assert __version__ == '0.1.0'
 
@@ -13,7 +14,6 @@ def test_node_has_value():
   actual = node.value
   assert actual == "Anas"
 
-
 def test_node_has_next_attribute():
   node = Node("Anas")
   actual = node.next
@@ -21,7 +21,6 @@ def test_node_has_next_attribute():
 
 def test_linkedlist():
    assert LinkedList()
-
 
 def test_insert():
   # arrange
@@ -36,7 +35,6 @@ def test_fined_value_in_linked_list():
     new_linked= LinkedList()
     new_linked.insert(52)
     assert new_linked.includes(52)
-
 
 def test_fined_value_in_linked_list():
     new_linked= LinkedList()
