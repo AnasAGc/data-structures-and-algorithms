@@ -69,3 +69,23 @@ if __name__ == "__main__":
   ll.insert(54)
   print(test_node)
 #   ll.insert(71)
+
+
+
+
+
+    
+  # def insert_after(self,old,value):
+  #   current=Node(old)
+  #   last=self.head
+  #   temp=self.head  
+
+    
+  #   while last.next:
+    
+  #     if str(current)==str(temp):
+  #       temp=last.next
+  #       last.next=Node(value)
+        
+  #     last=last.next
+  #     temp=last.next
