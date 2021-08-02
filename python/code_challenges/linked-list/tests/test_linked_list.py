@@ -19,8 +19,8 @@ def test_node_has_next_attribute():
   actual = node.next
   assert True
 
-def test_linkedlist():
-   assert LinkedList()
+# def test_linkedlist():
+#    assert LinkedList()
 
 def test_insert():
   # arrange
@@ -90,3 +90,14 @@ def test_add_after_last():
     new_linked.insert(111)
     new_linked.insert_after(1,30)
     assert new_linked.includes(30)
+
+def test_out_K_of_Range():
+    new_linked=LinkedList()
+    new_linked.kthFromEnd(0)=="out of range"
+    new_linked.insert(1)
+    new_linked.append(2)
+    new_linked.insert(3)
+    new_linked.insert(4)
+    assert new_linked.kthFromEnd(0) == 2
+    assert new_linked.kthFromEnd(1) == 1
+    assert new_linked.kthFromEnd(100) == "out of range"
