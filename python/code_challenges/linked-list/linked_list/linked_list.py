@@ -51,25 +51,44 @@ class LinkedList():
        break
      last=last.next
 
-  def insert_before(self,old,value):
-    current=Node(old)
-    last=self.head
-    temp=last.next
-    if str(current)==str(last):
-      self.insert(value)
-      return
+  # def insert_before(self,old,value):
+  #   current=Node(old)
+  #   last=self.head
+  #   temp=last.next
+    # if str(current)==str(last):
+    #   self.insert(value)
+    #   return
       
-    while last.next:
+  #   while last.next:
     
-      if str(current)==str(temp):
-        last.next=Node(value)
-        last=last.next
-        last.next=temp
+  #     if str(current)==str(temp):
+  #       last.next=Node(value)
+  #       last=last.next
+  #       last.next=temp
 
-      last=last.next
-      temp=last.next
-     
-    
+  #     last=last.next
+  #     temp=last.next
+
+  def insert_before(self,flage,new_value):
+    head=self.head
+    nextv=self.head
+    node=Node(new_value)
+    if str(flage)==str(self.head):
+      self.insert(new_value)
+      return
+    while flage!=nextv.value:
+        print('aaaaaaaaaaaaaaaaaaaaa')
+        head=nextv
+        nextv=nextv.next
+    head.next=node
+    node.next=nextv
+
+  
+      
+
+
+
+
   def insert_after(self,old_value,value):
     node=Node(value)
     current=self.head
@@ -85,7 +104,13 @@ class LinkedList():
       temp=temp.next
     self.append(value)
       
-        
+  def __len__(self):
+    counter = 0
+    current = self.head
+    while current:
+      counter += 1
+      current = current.next
+    return counter      
 
 
 
@@ -114,7 +139,24 @@ class LinkedList():
     # return new_list
 
   def __repr__(self):
+
     return "LinkedList()"
+  
+
+  def kthFromEnd(self,num):
+      num1=len(self)-1
+      if num1<num:
+          return ("out of range")
+      num_of_loop=(len(self)-num)-1
+      current=self.head
+      while num_of_loop >0 :
+        #   print(num_of_loop)
+          current=current.next
+          num_of_loop -=1
+      return current.value
+
+
+
 
 
 
@@ -124,12 +166,14 @@ if __name__ == "__main__":
   ll = LinkedList()
   test_node=Node(5)
   ll.insert(167)
+  ll.insert(168)
   ll.insert(54)
+  ll.insert(55)
   ll.insert(3)
-  ll.append(3)
+  ll.append(33)
   ll.append(77)
 
-  ll.insert_after(3,555555555555555)
+  ll.insert_before(3,555555555555555)
 
-  print(ll.includes(77))
+  print(ll)
 #   ll.insert(71)
