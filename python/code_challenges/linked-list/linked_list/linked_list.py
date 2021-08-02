@@ -77,7 +77,6 @@ class LinkedList():
       self.insert(new_value)
       return
     while flage!=nextv.value:
-        print('aaaaaaaaaaaaaaaaaaaaa')
         head=nextv
         nextv=nextv.next
     head.next=node
@@ -103,6 +102,9 @@ class LinkedList():
       current=current.next
       temp=temp.next
     self.append(value)
+
+
+    
       
   def __len__(self):
     counter = 0

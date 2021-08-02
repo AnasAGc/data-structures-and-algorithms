@@ -8,7 +8,7 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 ------------------------------------------------------------------------------------------------ */
 
-const raisedToTheThird = (arr) => arr.map((value) => value * value * value);
+const raisedToTheThird = (arr) => arr.map((item) => item * item * item);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -35,20 +35,13 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
-
-
-
-
 const forLoopTwoToThe = (arr) => {
-  let newArray=[];
-  for (let i = 0; i < arr.length; i++) {
-  
-    newArray.push(Math.pow(2, arr[i]));
-  }
-  return newArray;
-
+  let newarr = [];
+  arr.map((value) => {
+    newarr.push(Math.pow(2, value));
+  });
+  return newarr;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -57,11 +50,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  let newArr = [];
-  arr.forEach((element) => {
-    newArr.push(Math.pow(2, element));
+  let newarr = [];
+  arr.forEach((value) => {
+    newarr.push(Math.pow(2, value));
   });
-  return newArr;
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,13 +66,12 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 const mapTwoToThe = (arr) => {
   let x;
   let back = arr.map((value) => {
-    if (value===0){
+    if (value === 0) {
       return 1;
-    }else{
+    } else {
       x = Math.pow(2, value);
       return x;
     }
-    
   });
   return back;
 };
