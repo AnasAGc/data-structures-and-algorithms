@@ -1,4 +1,7 @@
 
+from typing import Counter
+
+
 class Node:
   ''''
   THis the class is responsiple to create the Nodes 
@@ -26,7 +29,7 @@ class LinkedList():
 
   def insert(self, value):
     node = Node(value)
-    print(node)
+    # print(node)
     if self.head:
       node.next = self.head
 
@@ -35,7 +38,7 @@ class LinkedList():
   def includes(self,vlaue):
      current=self.head
      while current :
-         print(current.value)
+        #  print(current.value)
          if vlaue ==current.value:
             return True
          current=current.next
@@ -127,7 +130,7 @@ class LinkedList():
     current = self.head
     while current:
       string += f"{str(current.value)} -> "
-      print(current.next)
+      # print(current.next)
       current = current.next
     string += "None"
     return string
@@ -158,8 +161,44 @@ class LinkedList():
       return current.value
 
 
+# def zipLists(list1, list2):
+#   head_L1=list1.head
+#   next_l1=head_L1.next
+#   head_L2=list2.head
+#   next_l2=head_L2.next
+#   conter=3
+#   for i in range(10):
+#      head_L1.next=head_L2
+#      head_L2.next=next_l1
+#      next_l1.next=next_l2
+#     #  next_l2.next=
 
+#   print(list1)
+   
 
+def zipLists(list1, list2):
+    current1 = list1.head
+    current2 = list2.head
+    if current1 == None or current2 == None:
+        if current1:
+            return list1.__str__()
+        elif current2:
+            return list2.__str__()
+        else:
+         return "Linked lists are both Empty "
+    zip_list = []
+    while current1 or current2:
+        if(current1):
+            zip_list+=[current1.value]
+            current1 = current1.next
+        if(current2):
+            zip_list+=[current2.value]
+            current2 = current2.next
+    insertion_values=''
+    for item in zip_list:
+      insertion_values+=f'{item}-> '
+    insertion_values+='None'
+    return insertion_values
 
 
 
@@ -167,15 +206,21 @@ class LinkedList():
 if __name__ == "__main__":
   ll = LinkedList()
   test_node=Node(5)
+  ss=LinkedList()
   ll.insert(167)
   ll.insert(168)
   ll.insert(54)
   ll.insert(55)
   ll.insert(3)
-  ll.append(33)
-  ll.append(77)
+  ss.insert(555)
+  ss.insert(1)
+  ss.insert(2)
+  ss.insert(3)
+  # print(ll)
+  # print(ll)
+  # print(ss)
+  print(  zipLists(ss,ll))
+  # ll.insert_before(3,555555555555555)
 
-  ll.insert_before(3,555555555555555)
-
-  print(ll)
+  # print(f'{ll.head} if the Length')
 #   ll.insert(71)
