@@ -55,7 +55,10 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
+  charArray.sort((a, b) => {
+    if (a.children.length < b.children.length) return -1;
+  });
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,10 +113,20 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
+// const isCapitalized = (str) => {
+//   let regex1=/=*([A-Z]\w*\W*)+=*/g;
+//   let res1=str.match(regex1);
+//   if(res1===null){
+//     return [];
+//   }else{
+//     return res1;
+//   }
+// };
+
 const isCapitalized = (str) => {
-  let regex1=/=*([A-Z]\w*\W*)+=*/g;
-  let res1=str.match(regex1);
-  return res1;
+  // Solution code here...
+  const pattern = /\b[A-Z]\w*/g;
+  return str.match(pattern) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +136,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regexPattern = /^[A-J]/g;
+  let result = [];
+  arr.forEach((item) => {
+    if (regexPattern.test(item)) {
+      result.push(item);
+    }
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

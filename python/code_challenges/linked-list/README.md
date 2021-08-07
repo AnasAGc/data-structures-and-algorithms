@@ -2,6 +2,7 @@
 ##  Challenge Summary
 Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at a contiguous location; the elements are linked using pointers.
 
+
 ##  Challenge Summary
 write a function called ziplist which takes
 two linked lists as arguments. Zip the two linked lists together into one linked list so that nodes alternate between the two lists and return a reference to the the head of the zipped list.

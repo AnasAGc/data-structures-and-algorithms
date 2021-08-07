@@ -12,10 +12,7 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = (people) => {
-  const namesArr = people.map(
-    (personData) => personData.firstName + " " + personData.lastName
-  );
-  return namesArr;
+  return people.map((person) => `${person.firstName} ${person.lastName}`);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,8 +23,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  const addtionArr = arr.reduce((acc, value) => acc + value, 0);
-  return addtionArr;
+  return arr.reduce((acc, value) => (acc = acc + value), 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,8 +39,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  const addtionArr = arr.reduce((acc, value) => acc + value.purchasePrice, 0);
-  return addtionArr;
+  return arr.reduce((acc, value) => (acc = acc + value.purchasePrice), 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,8 +51,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  const addtionArr = arr.reduce((acc, value, index) => acc + 1, 0);
-  return addtionArr;
+  return arr.reduce((acc, value, idx) => (acc = idx + 1), 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,9 +130,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  let x = str.split("").reverse();
-  let reverse = x.reduce((acc, value) => acc + value);
-  return reverse;
+  let arr = str.split("");
+  let newarr = [];
+  for (let index = arr.length - 1; index >= 0; index--) {
+    newarr.push(arr[index]);
+  }
+  return newarr.reduce((acc, val) => (acc = acc + val));
 };
 
 /* ------------------------------------------------------------------------------------------------
