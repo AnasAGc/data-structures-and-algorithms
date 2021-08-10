@@ -10,7 +10,7 @@
 
 ## Whiteboard Process
 
-![The San Juan Mountains are beautiful!](stack_queue_animal_shelter/whiteBoard/stack-queue-animal-shelter.jpg "San Juan Mountains")
+![The San Juan Mountains are beautiful!](https://i.ibb.co/hVTLJ4w/stack-queue-animal-shelter.jpg "San Juan Mountains")
 
 
 
