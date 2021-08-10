@@ -88,17 +88,42 @@ class Queue():
             return True
     
 
-if __name__=="__main__":
- test=Queue()
+class PseudoQueue:
+    def __init__(self):
+        self.pushStack = Stack()
+        self.popStack = Stack()
 
- test.enqueue(2)
+    def enqueue(self, item):
+        self.pushStack.push(item)
+
+    def dequeue(self):
+        if self.popStack.is_empty():
+            while self.pushStack.top != None:
+                print('ssss')
+                self.popStack.push(self.pushStack.top.value)
+                self.pushStack.top=self.pushStack.top.next
+            
+        return self.popStack.pop()
+
+    def __str__(self):
+        strain=''
+                    
+            
+
+
+if __name__=="__main__":
+ test=PseudoQueue()
+
+ test.enqueue(7)
  test.enqueue(1)
  test.enqueue(2)
- test.dequeue()
- test.dequeue()
- test.dequeue()
+ test.enqueue(5)
+
 #  test.dequeue()
  
- print(test.is_empty())
+ print(test.dequeue())
+ print(test.dequeue())
+ print(test.dequeue())
+ print(test.dequeue())
 
  
