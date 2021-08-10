@@ -1,19 +1,63 @@
-# Stacks and Queues
-### Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+# Animal Shelter
 
-### A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO).
+## Challenge Summary
 
-## Challenge
-+ Create a class called Stack, a class called Queue, and a class called Node
+### Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach. implement these methods:
 
-+ Node class has properties for the value stored in the Node, and a pointer to the next node.
+### enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
 
-+ Stack class has a top property. It creates an empty Stack when instantiated.
+### dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
 
-+ Queue class has a front property. It creates an empty Queue when instantiated
+## Whiteboard Process
+
+![The San Juan Mountains are beautiful!](whiteBoard/stack-queue-animal-shelter.jpg)
+
 
 ## Approach & Efficiency
 
-First, i created a class called Node, that takes in a value, and define a value and a next property for every instance created, then i defined the Stack class, that has four methods for now, push is for appending a new node to the stack, pop is for removing a node form the stack, peek is to see whats the last value added to the stack, and isEmpty is to check if the stack is empty or not, exceptions were created in case of an empty stack.
+First I created class Animal_shelter and initiate dogs and cats queue in the dunder init method then I created method handle enqueue based on the inputs type,in the enqueue method it add the values to the dogs and cats queue in the initiation an in the last I create method handle the dequeue based on the pref input
+it returns object .
 
-then, i created a class called Queue, that has four methods, enqueue, that takes a value as an argument, then add the new node to the Queue, dequeue is to remove the first node out of the Queue, peek is to check the first node inside the Queue, and the isEmpty is to check if the queue is empty or not, exceptions were created in case of empty stack.
+
+## Solution
+```
+   
+class Animal_Shelter():
+    def __init__(self) -> None:
+        self.dogs=Queue()
+        self.cats=Queue()
+    
+    def enqueue(self,animal):
+
+        if animal.type=="Dog":
+            self.dogs.enqueue(animal)
+        elif animal.type=="Cat":
+            self.cats.enqueue(animal)
+        else:
+            raise Exception("THis is Not  Cat nor Dog ")   
+    
+    def dequeue(self,pref):
+
+        if pref=="Dog" or pref=="dog" :
+           return self.dogs.dequeue()
+
+        elif pref=="Cat" or pref=="cat":
+           return self.cats.dequeue()
+
+        else:
+            return None
+            
+            
+
+
+class Dog():
+    def __init__(self,name) -> None:
+        self.type="Dog"
+        self.name=name
+
+class Cat():
+    def __init__(self,name) -> None:
+        self.type="Cat"
+        self.name=name
+
+```
