@@ -10,7 +10,8 @@
 
 ## Whiteboard Process
 
-![The San Juan Mountains are beautiful!](whiteBoard/stack-queue-animal-shelter.jpg)
+![The San Juan Mountains are beautiful!](stack_queue_animal_shelter/whiteBoard/stack-queue-animal-shelter.jpg "San Juan Mountains")
+
 
 
 ## Approach & Efficiency
