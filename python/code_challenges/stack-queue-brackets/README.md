@@ -9,7 +9,7 @@
 
 ## Whiteboard Process
 
-![The San Juan Mountains are beautiful!](stack_queue_animal_shelter/whiteBoard/stack-queue-animal-shelter.jpg "San Juan Mountains")
+![The San Juan Mountains are beautiful!](https://i.ibb.co/sKKMrBm/validate-brackets.jpg "San Juan Mountains")
 
 
 
@@ -27,7 +27,7 @@ i createdfunction that takes in a string, the it starts checking if the characte
 
 ## Solution
 ```
-   
+  
 open_list = ["[","{","("]
 close_list = ["]","}",")"]
   
@@ -42,7 +42,8 @@ def check(myStr):
                 (open_list[pos] == stack[len(stack)-1])):
                 stack.pop()
             else:
-                return "Unbalanced"
+                return False
+
     if len(stack) == 0:
         return True
     else:
