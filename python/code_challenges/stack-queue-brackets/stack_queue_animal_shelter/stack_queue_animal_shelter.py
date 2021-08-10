@@ -1,3 +1,6 @@
+from typing import Counter
+
+
 class Node():
     def __init__(self,value=None) -> None:
         """This Function Creates Nodes """
@@ -9,6 +12,7 @@ class Node():
 class Stack():
     def __init__(self,node=None) -> None:
         self.top=node
+        self.counter=0
 
     def push(self,value=None):
         """ Adding New value by assign it to head """
@@ -39,6 +43,19 @@ class Stack():
          return self.top.value
         except:
          raise Exception('The stack is Empty')
+    
+    def __len__(self):
+
+        while self.top:
+            self.counter+=1
+            self.top=self.top.next
+
+        return self.counter    
+
+
+
+
+    
 
 
 class Queue():
@@ -110,7 +127,8 @@ def check(myStr):
                 (open_list[pos] == stack[len(stack)-1])):
                 stack.pop()
             else:
-                return "Unbalanced"
+                return False
+
     if len(stack) == 0:
         return True
     else:
@@ -124,6 +142,7 @@ def check(myStr):
     
 
 if __name__=="__main__":
+
     string = "{[]{()}}"
     print(string,"-", check(string))
     
@@ -132,6 +151,14 @@ if __name__=="__main__":
     
     string = "((()"
     print(string,"-",check(string))
+    
+    # a=Stack()
+    # a.push("1")
+    # a.push("2")
+    # a.push("3")
+    # a.push("4")
+    # print(len(a))
+
 
 
  
