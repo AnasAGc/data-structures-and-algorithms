@@ -4,7 +4,7 @@
 ### A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO).
 
 ## Challenge
-+ Create a class called Stack, a class called Queue, and a class called Node
++ Create a class called Stack,a class called Queue, and a class called Node
 
 + Node class has properties for the value stored in the Node, and a pointer to the next node.
 
