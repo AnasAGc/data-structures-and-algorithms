@@ -9,7 +9,6 @@ class Node():
 class Stack():
     def __init__(self,node=None) -> None:
         self.top=node
-        self.counter=0
 
     def push(self,value=None):
         """ Adding New value by assign it to head """
@@ -40,16 +39,6 @@ class Stack():
          return self.top.value
         except:
          raise Exception('The stack is Empty')
-
-    def __str__(self) -> str:
-        strain=""
-        while self.top:
-            strain+=f'{self.top.value}-->'
-            self.top=self.top.next
-        strain+="None"
-        return strain
-        
-    
 
 
 class Queue():
@@ -97,27 +86,64 @@ class Queue():
         else:
             print("ss")
             return True
-
-    def __str__(self) -> str:
-        strain=""
-        while self.front:
-            strain+=f'{self.front.value}-->'
-            self.front=self.front.next
-        strain+="None"
-        return strain
     
+    def __str__(self):
+        str=""
+        while self.front:
+            str+=f"{self.front.value} --> "
+            self.front=self.front.next
+        str+="None" 
+        return(str)
+
+    
+class Animal_Shelter():
+    def __init__(self) -> None:
+        self.dogs=Queue()
+        self.cats=Queue()
+    
+    def enqueue(self,animal):
+
+        if animal.type=="Dog":
+            self.dogs.enqueue(animal)
+        elif animal.type=="Cat":
+            self.cats.enqueue(animal)
+        else:
+            raise Exception("THis is Not  Cat nor Dog ")   
+    
+    def dequeue(self,pref):
+
+        if pref=="Dog" or pref=="dog" :
+           return self.dogs.dequeue()
+
+        elif pref=="Cat" or pref=="cat":
+           return self.cats.dequeue()
+
+        else:
+            return None
+            
+            
+
+
+class Dog():
+    def __init__(self,name) -> None:
+        self.type="Dog"
+        self.name=name
+
+class Cat():
+    def __init__(self,name) -> None:
+        self.type="Cat"
+        self.name=name
+
+
 
 if __name__=="__main__":
- test=Stack()
+#  shelter1=Animal_Shelter()
+#  fafy=Dog("fafy")
+#  zozo=Cat("zozo")
+#  shelter1.enqueue(fafy)
+#  shelter1.enqueue(zozo)
+#  x=shelter1.dequeue("dog")
+ print("yessssss")
 
- test.push(2)
- test.push(1)
- test.push(2)
- test.push(3)
-#  test.dequeue()
-#  test.dequeue()
-#  test.dequeue()
  
- print(test)
-
  
