@@ -63,6 +63,7 @@ class Queue():
         """Create Queue with None Front and Rear """
         self.front=None
         self.rear=None
+        self.counter=0
     
     def enqueue(self,value):
         """Add Node to The Queue """
@@ -111,6 +112,15 @@ class Queue():
             self.front=self.front.next
         str+="None" 
         return(str)
+
+    def __len__(self):
+        current=self.front
+        while current!=None:
+            self.counter+=1
+            current=current.next
+
+        return self.counter
+        
         
 
 open_list = ["[","{","("]
@@ -134,7 +144,14 @@ def check(myStr):
     else:
         return False
   
-  
+ 
+
+    
+
+    
+
+
+
 
 
 
@@ -143,22 +160,24 @@ def check(myStr):
 
 if __name__=="__main__":
 
-    string = "{[]{()}}"
-    print(string,"-", check(string))
+    # string = "{[]{()}}"
+    # print(string,"-", check(string))
     
-    string = "[{}{})(]"
-    print(string,"-", check(string))
+    # string = "[{}{})(]"
+    # print(string,"-", check(string))
     
-    string = "((()"
-    print(string,"-",check(string))
+    # string = "((()"
+    # print(string,"-",check(string))
     
-    # a=Stack()
-    # a.push("1")
-    # a.push("2")
-    # a.push("3")
-    # a.push("4")
-    # print(len(a))
-
+    a=Queue()
+    a.enqueue("A")
+    a.enqueue("B")
+    a.enqueue("C")
+    a.enqueue("D")
+    a.enqueue("E")
+    a.enqueue("F")
+    a.enqueue("G")
+    print(duckDuckGoose(a,3))
 
 
  
