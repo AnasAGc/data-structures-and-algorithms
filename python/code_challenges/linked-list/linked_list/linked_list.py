@@ -200,6 +200,31 @@ def zipLists(list1, list2):
     insertion_values+='None'
     return insertion_values
 
+def swap_head(link_list):
+
+  while link_list.head.next.next:
+   
+    curent=link_list.head
+    next1=link_list.head.next.next
+    
+    link_list.head=next1
+    link_list.head.next=curent.next
+    
+    curent.next=next1.next
+    curent.next.next=curent
+
+   
+   
+   
+   
+
+
+   
+
+   
+  return link_list
+
+    
 
 
 
@@ -212,14 +237,16 @@ if __name__ == "__main__":
   ll.insert(54)
   ll.insert(55)
   ll.insert(3)
+
   ss.insert(555)
   ss.insert(1)
   ss.insert(2)
   ss.insert(3)
+
   # print(ll)
   # print(ll)
   # print(ss)
-  print(  zipLists(ss,ll))
+  print(swap_head(ss))
   # ll.insert_before(3,555555555555555)
 
   # print(f'{ll.head} if the Length')
