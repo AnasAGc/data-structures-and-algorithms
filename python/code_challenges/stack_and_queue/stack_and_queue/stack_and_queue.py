@@ -9,6 +9,7 @@ class Node():
 class Stack():
     def __init__(self,node=None) -> None:
         self.top=node
+        self.counter=0
 
     def push(self,value=None):
         """ Adding New value by assign it to head """
@@ -39,6 +40,16 @@ class Stack():
          return self.top.value
         except:
          raise Exception('The stack is Empty')
+
+    def __str__(self) -> str:
+        strain=""
+        while self.top:
+            strain+=f'{self.top.value}-->'
+            self.top=self.top.next
+        strain+="None"
+        return strain
+        
+    
 
 
 class Queue():
@@ -86,19 +97,27 @@ class Queue():
         else:
             print("ss")
             return True
+
+    def __str__(self) -> str:
+        strain=""
+        while self.front:
+            strain+=f'{self.front.value}-->'
+            self.front=self.front.next
+        strain+="None"
+        return strain
     
 
 if __name__=="__main__":
- test=Queue()
+ test=Stack()
 
- test.enqueue(2)
- test.enqueue(1)
- test.enqueue(2)
- test.dequeue()
- test.dequeue()
- test.dequeue()
+ test.push(2)
+ test.push(1)
+ test.push(2)
+ test.push(3)
+#  test.dequeue()
+#  test.dequeue()
 #  test.dequeue()
  
- print(test.is_empty())
+ print(test)
 
  
