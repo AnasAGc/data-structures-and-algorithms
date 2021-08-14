@@ -1,5 +1,5 @@
 
-# Breadth First
+# Fizz Buzz Tree
 
 Write a function called fizz buzz tree, that takes k-ary tree as an argument, and returns a copy of the k-ary tree with these changes:
 
@@ -8,7 +8,7 @@ replace the value by Buzz if the value is divisible by 5
 replace the value by FizzBuzz if the value is divisible by 3 and 5
 
 ## WhiteBoard 
-![The San Juan Mountains are beautiful!](https://i.ibb.co/2nFsSNZ/breadthfirst.jpg "San Juan Mountains")
+![The San Juan Mountains are beautiful!](https://i.ibb.co/QPbgCRX/Fizzbuzz.jpg "San Juan Mountains")
 
 ## Approach & Efficiency
 
@@ -16,34 +16,39 @@ i took the approach of storing all the nodes inside an array, and loop over them
 
 for the time complexity => O(n), we have a while loop that loops over all the nodes in the solution
 
-for the space complexity => O(n), we have a list that is directly dependent on a while loop to store the values
+for the space complexity => O(1),  I just copy the value of the Tree without use any additional space. 
 
 # Solution
 
 
 ```
-  def breadthFirst():
+  def fizz_buzz_tree(k_array):
+   try:
+     
+        copy_root=copy.deepcopy(k_array)
+        temp=Queue()
+        temp.enqueue(copy_root.root)
+        print(temp.front.value)
 
-        if not root:
-                raise Exception("Empty Tree")
+        while temp.front:
 
-        Queue_breadth = Queue()
-        Queue_breadth.enqueue(root)
+            [temp.enqueue(i) for i in temp.front.children if temp.front.children]
 
-        try:
-            while Queue_breadth.peek():
+            if (temp.front.value % 3 == 0 and temp.front.value % 5 == 0):
+                temp.front.value='FizzBuzz'
+
+            elif temp.front.value % 3 == 0:
+                temp.front.value='Fizz'
+
+            elif temp.front.value % 5 == 0:
+                temp.front.value='Buzz'   
                 
-                    node_front = Queue_breadth.dequeue()
-                    
-                    self.arr.append(node_front.value)
-
-                    if node_front.left:
-                        Queue_breadth.enqueue(node_front.left)
-
-                    if node_front.right:
-                        Queue_breadth.enqueue(node_front.right)
+            temp.dequeue()
             
-        except:
-            return self.arr
+        return copy_root
+        
+   except:
+        raise ValueError('Empty Root')
+
 
 ```
