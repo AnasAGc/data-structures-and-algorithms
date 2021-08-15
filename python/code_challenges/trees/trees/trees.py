@@ -7,6 +7,47 @@ class Node:
         self.left = None
         self.right = None
 
+class Queue:
+    def __init__(self):
+        self.front=None
+        self.rear=None
+    def enqueue(self,value):
+        node=Node(value)
+        if self.is_empty():
+            self.front=node
+            self.rear=node
+        self.rear.next=node
+        self.rear=node
+    def dequeue(self):
+        if self.is_empty():
+            raise Exception("empty equeue")
+        if self.front==self.rear:
+            temp=self.front
+            self.front=None
+            self.rear=None
+            return temp.value
+        else:
+            temp=self.front
+            self.front=self.front.next
+            temp.next=None
+            return temp.value
+
+    def peek(self):
+       if self.is_empty():
+           raise Exception("empty equeue")
+       return self.front.value
+
+
+    def is_empty(self):
+     return not self.front
+
+    def __len__(self):
+        counter=0
+        while self.front:
+            counter +=1
+            self.dequeue()
+        return counter
+
 
 class BinaryTree:
     def __init__(self):
@@ -55,6 +96,17 @@ class BinaryTree:
 
     def test(self):
         self.arr = []
+
+    def tree_max(self):
+
+        x=self.in_order(self.root)
+        self.max=0
+
+        for i in x :
+            if i>self.max:
+                self.max=i
+        return self.max
+
 
 
 class BinarySearch(BinaryTree):
@@ -111,3 +163,15 @@ class BinarySearch(BinaryTree):
                             return True
                     else:
                         return False
+
+
+
+# x=Node(5)
+# x.left=Node(68)
+# x.right=Node(78)
+# x.left.left=Node(8)
+# x.right.right=Node(9)
+# y=BinaryTree()
+# y.root=x
+
+# print(y.breadthFirst(x))

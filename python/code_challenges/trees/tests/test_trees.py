@@ -100,3 +100,17 @@ def test_Contains_method():
     assert x.Contains(5) == True
     assert x.Contains(6) == True
     assert x.Contains(3) == False
+
+
+def test_get_max():
+
+    x=Node(5)
+    x.left=Node(68)
+    x.right=Node(78)
+    x.left.left=Node(8)
+    x.right.right=Node(9)
+    y=BinaryTree()
+    y.root=x
+    actual=y.tree_max()
+    expected=78
+    assert actual==expected
