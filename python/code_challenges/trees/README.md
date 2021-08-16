@@ -1,31 +1,43 @@
 
-# Trees
+# Breadth First
 
-Find the Maximum Value in a Binary Tree, create a method that takes no inputs, and returns the maximum value inside the Binary Tree
+Write a function called breadth first that accept the root of the tree and return the values in array
 
-## Challenge
 
-write funtion to  find maximum value taks Arguments: none and Returns: number
 
 ## WhiteBoard 
-![The San Juan Mountains are beautiful!](https://i.ibb.co/9TVBndC/find-max.jpg "San Juan Mountains")
+![The San Juan Mountains are beautiful!](https://i.ibb.co/2nFsSNZ/breadthfirst.jpg "San Juan Mountains")
 
 ## Approach & Efficiency
 
-I used the in_order to get the values of the Tree in list then I loop to find the max value in the array. 
+I used the queue data struction to implement the breadthFirst order as it shown in the Solution  
 
 
 # Solution
 
 ```
-def tree_max(self):
+  def breadthFirst():
 
-        x=self.in_order(self.root)
-        self.max=0
+        if not root:
+                raise Exception("Empty Tree")
 
-        for i in x :
-            if i>self.max:
-                self.max=i
-        return self.max
+        Queue_breadth = Queue()
+        Queue_breadth.enqueue(root)
+
+        try:
+            while Queue_breadth.peek():
+                
+                    node_front = Queue_breadth.dequeue()
+                    
+                    self.arr.append(node_front.value)
+
+                    if node_front.left:
+                        Queue_breadth.enqueue(node_front.left)
+
+                    if node_front.right:
+                        Queue_breadth.enqueue(node_front.right)
+            
+        except:
+            return self.arr
 
 ```
