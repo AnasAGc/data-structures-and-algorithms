@@ -52,20 +52,21 @@ class Queue:
 class BinaryTree:
     def __init__(self):
         self.root = None
-        self.arr = []
 
     def pre_order(self, root):
         # print(root.value)
-        try:
-            self.arr.append(root.value)
-            if root.left != None:
-                self.pre_order(root.left)
+        arr = []
+        def walk(node):
+            arr.append(node.value)
+            if node.left != None:
+                walk(node.left)
 
-            if root.right != None:
-                self.pre_order(root.right)
-            return self.arr
-        except:
-            raise Exception("pre order accept valid ")
+            if node.right != None:
+                walk(node.right)
+
+        walk(root)      
+        return arr
+        
 
     def post_order(self, root):
         try:

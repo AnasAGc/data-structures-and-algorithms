@@ -224,29 +224,55 @@ def swap_head(link_list):
    
   return link_list
 
-    
 
+# def reverse(linklist,pre=None):
+      
+#       def _re
+    
+#       if linklist.head:
+
+#           if linklist.head.next:
+#            global next1=linklist.head.next
+           
+#           linklist.head.next=pre
+#           # print(pre)
+#           pre=linklist.head
+#           # print(pre)
+#           linklist.head=next1
+#           reverse (linklist,pre)
+
+  
+#       linklist.head=pre
+#       return linklist
+   
+   
+
+
+       
 
 
 if __name__ == "__main__":
   ll = LinkedList()
   test_node=Node(5)
   ss=LinkedList()
-  ll.insert(167)
-  ll.insert(168)
-  ll.insert(54)
-  ll.insert(55)
+  ll.insert(5)
+  ll.insert(4)
   ll.insert(3)
+  ll.insert(2)
+  ll.insert(1)
 
   ss.insert(555)
   ss.insert(1)
   ss.insert(2)
   ss.insert(3)
 
-  # print(ll)
-  # print(ll)
+  print(ll)
+  reverse(ll)
+  # reverse(ll)
   # print(ss)
-  print(swap_head(ss))
+  
+  print(ll)
+  # print(swap_head(ss))
   # ll.insert_before(3,555555555555555)
 
   # print(f'{ll.head} if the Length')
