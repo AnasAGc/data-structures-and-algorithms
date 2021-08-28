@@ -1,6 +1,6 @@
 # Insertion Sort
 
-Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. 
+### Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. 
 
 
 ## Pseudocode
@@ -29,35 +29,35 @@ Sample Array: [8,4,23,42,16,15]
 ### Pass 1:
 when i=1
 
-![1](./blog/1.png)
+![first](./blog/1.png)
 
 ### Pass 2:
 when i=2
 
-![2](./blog/2.png)
+![second](./blog/2.png)
 
 ### Pass 3:
 when i=3
 
-![3](./blog/3.png)
+![3th](./blog/3.png)
 
 
 
 ### Pass 4:
 when i=4
 
-![4](./blog/4.png)
+![4th](./blog/4.png)
 
 ### Pass 5:
 when i=5
 
 
-![4](./blog/5.png)
+![5th](./blog/5.png)
 
 
 
 ## Efficency
 
-Time: O(n^2)
+### Time: O(n^2)
 
-Space: O(1)
+### Space: O(1)
