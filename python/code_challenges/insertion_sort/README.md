@@ -8,15 +8,13 @@ Create function take an array as argument than sort it in Merge Sort.
 
 ## Approach & Efficiency
 
-
-+ Ceate function take array of numbers as arg
-+ declear n equal the length of array
-+ let mid half of n
-+ let left the first half and right the seconde half
-+ clal the function again with left and right
-+ after that create new function called merge take three argument left, right and the orgnal array
-+ call merge with the left, right and array
-
+- Define function take list of numbers.
+- Declare n equal the length of list
+- Let mid half of n
+- Let left the first half and right the rest.
+- Call the function again with left and right
+- Create new function called merge take three argument left, right and the original list
+- Call merge with the left, right and list
 
 
 
@@ -65,6 +63,6 @@ def merge(left, right, arr):
 
 
 
-## Coapration 
+## Cooperation 
 
 I work with Abdullah Elian in this code challenge  
