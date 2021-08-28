@@ -45,16 +45,23 @@ def reversed_insertion_sort(my_list):
 
     return(new_list)
 
+[8,4,23,42,16,15]
 
-def InsertionSort(arr):
+def insertionSort(arr):
     
   for i in range(1,len(arr)):
-    j=i-1
-    temp=arr[i]
 
-    while j >=0 and temp < arr[j]:
+    j=i-1
+    temp=arr[i] # 16
+
+    while j >=0 and temp < arr[j]: # 2>0 and 16 < 23 
       arr[j+1]=arr[j]
       j=j-1
-    arr[j + 1] =temp
-
+      
+    arr[j + 1] =temp # 
+    
+  arr=remove_duplcates(arr)
   return arr
+
+
+print(insertionSort([7,8,9,0,4,2]))
