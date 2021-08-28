@@ -1,6 +1,5 @@
 from insertion_sort import __version__
 from insertion_sort.insertion_sort import *
-import pytest 
 
 def test_version():
     assert __version__ == '0.1.0'
