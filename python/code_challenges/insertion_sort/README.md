@@ -1,5 +1,5 @@
 # Challenge Summary
-Create function take an array as argument than sort it in Merge Sort.
+Create function take an array as argument than sort it in quick Sort.
 
 ## Whiteboard Process
 ![mergesortion](linked-list-insertions-append.jpg)
