@@ -2,7 +2,7 @@
 def  mergesort(arr):
     n=len(arr)
 
-    ifhttps://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-26/ n > 1:
+    if n > 1:
        mid =int(n/2)
        left =arr[0:mid]
        right =arr[mid:n]
