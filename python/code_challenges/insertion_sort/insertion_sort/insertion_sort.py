@@ -52,14 +52,14 @@ def insertionSort(arr):
   for i in range(1,len(arr)):
 
     j=i-1
-    temp=arr[i] # 16
+    temp=arr[i]
 
-    while j >=0 and temp < arr[j]: # 2>0 and 16 < 23 
+    while j >=0 and temp < arr[j]: 
       arr[j+1]=arr[j]
       j=j-1
       
-    arr[j + 1] =temp # 
-    
+    arr[j + 1] =temp 
+
   arr=remove_duplcates(arr)
   return arr
 
