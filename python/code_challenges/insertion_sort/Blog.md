@@ -1,22 +1,53 @@
-# Insertion Sort
-### Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+# Mergesort
+### merge sort (also commonly spelled as mergesort) is an efficient, general-purpose, and comparison-based sorting algorithm. 
+### Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output.
+
 
 ```
-InsertionSort(int[] arr)
+ALGORITHM Mergesort(arr)
+    DECLARE n <-- arr.length
 
-    FOR i = 1 to arr.length
+    if n > 1
+      DECLARE mid <-- n/2
+      DECLARE left <-- arr[0...mid]
+      DECLARE right <-- arr[mid...n]
+      // sort the left side
+      Mergesort(left)
+      // sort the right side
+      Mergesort(right)
+      // merge the sorted left and right sides together
+      Merge(left, right, arr)
 
-      int j <-- i - 1
-      int temp <-- arr[i]
+ALGORITHM Merge(left, right, arr)
+    DECLARE i <-- 0
+    DECLARE j <-- 0
+    DECLARE k <-- 0
 
-      WHILE j >= 0 AND temp < arr[j]
-        arr[j + 1] <-- arr[j]
-        j <-- j - 1
+    while i < left.length && j < right.length
+        if left[i] <= right[j]
+            arr[k] <-- left[i]
+            i <-- i + 1
+        else
+            arr[k] <-- right[j]
+            j <-- j + 1
 
-      arr[j + 1] <-- temp
+        k <-- k + 1
+
+    if i = left.length
+       set remaining entries in arr to remaining values in right
+    else
+       set remaining entries in arr to remaining values in left
 
 
 ```
 
 ## Trace
 
+
+![Mearge_Sort](linked-list-insertions-append.jpg)
+
+
+## big O 
+### Time: O(nlog(n))
+
+### Space: O(n)
