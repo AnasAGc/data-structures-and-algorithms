@@ -2,62 +2,61 @@
 Create function take an array as argument than sort it in quick Sort.
 
 ## Whiteboard Process
-![mergesortion](linked-list-insertions-append.jpg)
+![quick Sort ](a.jpg)
 
 
 ## Approach & Efficiency
 
-
-+ Ceate function take array of numbers as arg
-+ declear n equal the length of array
-+ let mid half of n
-+ let left the first half and right the seconde half
-+ clal the function again with left and right
-+ after that create new function called merge take three argument left, right and the orgnal array
-+ call merge with the left, right and array
-
++ selecting the pivot to be the the last element of the array,
++ sorting the values so the values on the left of the pivot would be the values smaller
++ the values on the right would be larger
++ we would determine specifically where is the pivot located
++ deal with the pivot's right elements and left elements separately by calling the function recursively
++ setting pivots and sorting arrays, at the end, we just combine every array back together to form a sorted array
 
 
 
 ## Solution
 ~~~
 
+def QuickSort(arr, left, right): 
+    if left < right:
 
-def  mergesort(arr):
-    n=len(arr)
+        position = Partition(arr, left, right)
 
-    if n > 1:
-       mid =int(n/2)
-       left =arr[0:mid]
-       right =arr[mid:n]
-    #    sort the left side
-       mergesort(left)
-    #    sort the right side
-       mergesort(right)
-    #    merge the sorted left and right sides together
-       merge(left, right, arr)
+        QuickSort(arr, left, position - 1)
 
+        QuickSort(arr, position + 1, right)
 
+     
 
-def merge(left, right, arr):
-     i =0
-     j =0
-     k =0
+def Partition(arr, left, right):
 
-     while i < len(left) and j < len(right):
-         if left[i] <= right[j]:
-            arr[k] =left[i]
-            i =i + 1
-         else:
-            arr[k] =right[j]
-            j =j + 1
+    pivot = arr[right] # 16 
+    low = left - 1
 
-         k =k + 1
+    for i  in range(left,right):
+        
+        if arr[i] <= pivot :
 
-     if i == len(left):
-            arr[k]=right[j]
-     else:
-            arr[k]=left[i]
+            low += 1
+            
+            # print(low)
+            Swap(arr, i, low)
+
+        print(low)
+        print(arr)
+        
+    Swap(arr, right, low + 1)
+
+    return low + 1
+
+    
+def Swap(arr, i, low):
+    temp = arr[i]
+
+    arr[i] = arr[low]
+    arr[low] = temp
 
 
 ~~~
