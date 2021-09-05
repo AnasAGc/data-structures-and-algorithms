@@ -1,6 +1,5 @@
-from insertion_sort import __version__
-
-from insertion_sort.quick_sort import *
+from quick_sort import __version__
+from quick_sort.quick_sort import *
 
 def test_version():
     assert __version__ == '0.1.0'
