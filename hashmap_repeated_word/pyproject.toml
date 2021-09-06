@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hashtables"
+name = "hashmap_repeated_word"
 version = "0.1.0"
 description = ""
 authors = ["Anas AbuGhalieh <civil.Anas1000@gmail.com>"]
