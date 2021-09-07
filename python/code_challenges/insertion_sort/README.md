@@ -1,3 +1,4 @@
+# Merge Sort
 # Challenge Summary
 Create function take an array as argument than sort it in quick Sort.
 
@@ -13,10 +14,16 @@ Create function take an array as argument than sort it in quick Sort.
 + we would determine specifically where is the pivot located
 + deal with the pivot's right elements and left elements separately by calling the function recursively
 + setting pivots and sorting arrays, at the end, we just combine every array back together to form a sorted array
+- Define function take list of numbers.
+- Declare n equal the length of list
+- Let mid half of n
+- Let left the first half and right the rest.
+- Call the function again with left and right
+- Create new function called merge take three argument left, right and the original list
+- Call merge with the left, right and list
 
 
 
-## Solution
 ~~~
 
 def QuickSort(arr, left, right): 
@@ -60,3 +67,9 @@ def Swap(arr, i, low):
 
 
 ~~~
+
+
+
+## Cooperation 
+
+I work with Abdullah Elian in this code challenge  
