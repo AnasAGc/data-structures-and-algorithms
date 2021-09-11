@@ -59,14 +59,14 @@ class Graph:
         edge1=Edge(vertex1,weight)
         self._adjacency_list[f"{vertex2}"].append(edge1)
 
-        # print(edge1.vertex)
+
         if not (vertex1 == vertex2) :
 
             edge2=Edge(vertex2,weight)
             self._adjacency_list[f"{vertex1}"].append(edge2)
         
 
-        # print(edge2.vertex)
+       
 
     
   
@@ -117,7 +117,7 @@ class Graph:
 
 
 
-  def _breadthFirst(self, action):
+  def _breadthFirst(self, action=lambda x: print(x)):
     """ 
     Performs a level order traversal of the graph and calls action at each node
     """
@@ -147,6 +147,7 @@ class Graph:
                 # print(edge.vertex)
                 visited.append(edge.vertex.value)
                 breadth.enqueue(edge.vertex)   
+    return visited
 
     
 
@@ -192,16 +193,18 @@ if __name__ == '__main__':
 
     graph=Graph()
     graph.add_vertex(ver)
+    graph.add_vertex(ver2)
+    graph.add_vertex(ver3)
+    graph.add_vertex(ver4)
 
-    # graph.add_vertex(ver2)
-    # graph.add_vertex(ver3)
-    # graph.add_vertex(ver4)
+    graph.add_edges(ver3,ver2)
+    graph.add_edges(ver,ver3)
+    graph.add_edges(ver,ver4)
 
-    graph.add_edges(ver,ver)
-    # graph.add_edges(ver,ver3)
-    # graph.add_edges(ver,ver4)
+    print(graph._breadthFirst())
 
-    print(len(graph.get_neighbors(ver)))
+
+    # print(len(graph.get_neighbors(ver)))
 
     # print(graph.size()
 
