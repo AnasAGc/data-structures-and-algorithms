@@ -13,6 +13,10 @@ Write a function called breadth first that accept the root of the tree and retur
 I used the queue data struction to implement the breadthFirst order as it shown in the Solution  
 
 
+## WhiteBored
+![Wi](https://i.ibb.co/kc205rZ/Breadth-first.jpg) 
+
+
 # Solution
 
 ```
