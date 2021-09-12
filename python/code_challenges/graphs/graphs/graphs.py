@@ -104,6 +104,14 @@ class Graph:
 
 
   def get_neighbors(self,vertex):
+    """[summary]
+
+    Args:
+        vertex ([Node ]): The vertex the you want to get the Edges 
+
+    Returns:
+        [type]: [description]
+    """
 
     return self._adjacency_list[f'{vertex}']
   
@@ -112,6 +120,12 @@ class Graph:
 
 
   def to_adj_list(self):
+    """ 
+    Return the List of the  adajcency list
+
+    Returns:
+        [List]: list contain the vertexse 
+    """
     return self._adajacency_list
   
 
@@ -180,6 +194,10 @@ class Graph:
                 visited.append(edge.vertex.value)
                 depthFirst.push(edge.vertex)  
         depthFirst.pop() 
+
+
+
+
 
 
 

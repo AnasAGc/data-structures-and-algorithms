@@ -50,6 +50,14 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
     * time: O(1)
     * space: O(1)
 
+* Breadth-first:
+ * time: o(n)
+ * space: o(1)
+
+# whiteBored 
+
+![ttt](https://i.ibb.co/kc205rZ/Breadth-first.jpg)
+
 ## API
 1. add node: add node to the graph with value of the input and return the node.
 
