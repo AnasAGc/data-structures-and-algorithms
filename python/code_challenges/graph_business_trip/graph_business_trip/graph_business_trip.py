@@ -49,32 +49,3 @@ def business_trip(graph,arr):
     return (bool(cost),cost)
 
 
-
-
-if __name__ == '__main__':
-    ver=Vertex('Metroville')
-    ver2=Vertex('Pandora')
-    ver3=Vertex('Arendelle')
-    ver4=Vertex('Monstropolis')
-    ver5=Vertex('Naboo')
-    
-    # ver3=Vertex('d')
-    # ver4=Vertex('p')
-
-    graph=Graph()
-    graph.add_vertex(ver)
-    graph.add_vertex(ver2)
-    graph.add_vertex(ver3)
-    graph.add_vertex(ver4)
-    graph.add_vertex(ver5)
-    graph.add_edges(ver,ver2,50)
-    graph.add_edges(ver3,ver4,150)
-    graph.add_edges(ver5,ver4,250)
-
-    # graph.add_vertex(ver3)
-    # graph.add_vertex(ver4)
-
-    # graph.add_edges(ver,ver3)
-    # graph.add_edges(ver,ver4)
-
-    print(business_trip(graph,['Arendelle','Monstropolis', 'Naboo']	))
