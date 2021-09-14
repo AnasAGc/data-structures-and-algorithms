@@ -195,6 +195,8 @@ class Graph:
                 depthFirst.push(edge.vertex)  
         depthFirst.pop() 
 
+    return visited
+
 
 
 

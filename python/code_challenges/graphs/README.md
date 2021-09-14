@@ -54,8 +54,14 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
  * time: o(n)
  * space: o(1)
 
+
+* Depth-first:
+ * time: o(n)
+ * space: o(1)
+
 # whiteBored 
 
+![depthFirst](depthFirst.jpeg)
 ![ttt](https://i.ibb.co/kc205rZ/Breadth-first.jpg)
 
 ## API
