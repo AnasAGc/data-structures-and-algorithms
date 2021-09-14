@@ -190,14 +190,77 @@ class BinarySearch(BinaryTree):
                     else:
                         return False
 
+def find_max_in_level(root):
+    max=[]
+    queue=Queue()
+    level=0
+
+    queue.enqueue(root)
+
+    def walk(queue,level):
+        nonlocal max
+      
+        if len(max)==(level):
+            max.append(0)
+
+        front=queue.dequeue()
+        if max[level]<=front.value:
+            max[level]=front.value
+        
+        level+=1
+        
+        if front.left:
+            queue.enqueue(front.left)
+            walk(queue,level)
+        
+        if front.right:
+            queue.enqueue(front.right)
+            walk(queue,level)
+    
+    walk(queue,level)
+    return max
 
 
-# x=Node(5)
-# x.left=Node(68)
-# x.right=Node(78)
-# x.left.left=Node(8)
-# x.right.right=Node(9)
-# y=BinaryTree()
-# y.root=x
+def isSameTree( p, q):
+        """
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: bool
+        """
+        flag=False
+        def walk(root1,root2):
+            nonlocal flag
+            if not (root1 and root2):
+                return 
 
-# print(y.breadthFirst(x))
+            if root1.value == root2.value:
+
+                flag  = True
+                 
+            else:
+                flag=False
+                return 
+            walk(root1.left,root2.left)
+            walk(root1.right,root2.right)
+        
+        walk(p,q)
+        return flag
+            
+
+
+
+
+x=Node(50)
+x.left=Node(68)
+x.right=Node(78)
+x.left.left=Node(8)
+x.right.right=Node(9)
+
+
+y=Node(50)
+y.left=Node(68)
+y.right=Node(78)
+y.left.left=Node(8)
+y.right.right=Node(9)
+
+print(isSameTree(x,y))
